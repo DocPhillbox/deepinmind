@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Deep-in-mind</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS sheets -->
+        <link rel="stylesheet" href="{% static 'css/theme_default.css' %}?{% now "U" %}">
+        <link rel="stylesheet" href="{% static 'css/quiz.css' %}?{% now "U" %}">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="name">deep-in-mind</a>
+                <ul>
+                    {% block content %}
+                        <li><p>{{user.username}}</p></li>
+                    {% endblock %}
+                </ul>
+            </nav>
+        </header>
+        <div class="quiz-list">
+            <a href="{% url 'quizcreation' %}"> Créer un nouveau quiz</a>
+            {% for quiz_data in quiz %}
+                <a class="quiz" href="{% url 'quizcreation' %}">{{quiz_data.title}}</a>
+            {% endfor %}
+        </div>
+    </body>
+</html>

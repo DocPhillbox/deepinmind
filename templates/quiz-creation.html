@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Deep-in-mind</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS sheets -->
+        <link rel="stylesheet" href="{% static 'css/theme_default.css' %}?{% now "U" %}">
+        <link rel="stylesheet" href="{% static 'css/quiz.css' %}?{% now "U" %}">
+        <script src="{% static 'js/quiz.js' %}?{% now "U" %}"></script>
+        <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+    </head>
+    <body onload="addform()">
+        <header>
+            <nav>
+                <a class="name">deep-in-mind</a>
+                <ul>
+                    {% block content %}
+                        <li><p>{{user.username}}</p></li>
+                    {% endblock %}
+                </ul>
+            </nav>
+        </header>
+        <div id="content">
+            <form id="form-quiz" method="POST">
+                <p>Titre : <input type="text" id="title" class="entryHead"></p>
+            </form>
+        </div>
+        <div class="btn">
+            <button onclick="addform()" class="click">Nouvelle question</button>
+            <form method="POST">
+                {% csrf_token %}
+                <button onclick="saveform()" class="click" name="quizData" id="btnData">Enregistrer quiz</button>
+            </form>
+        </div>
+    </body>
+</html>

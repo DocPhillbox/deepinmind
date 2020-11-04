@@ -1,0 +1,180 @@
+.game-menu {
+    text-align: center;
+}
+
+section div {
+    margin: 2rem;
+}
+
+.join input {
+    border: .2rem solid #434965;
+    border-radius: .3rem;
+    width: 10rem;
+    height: 2rem;
+    padding: .2rem .5rem;
+    text-transform: uppercase;
+    color: #00AF33;
+    text-align: center;
+}
+
+.create a {
+    background: #434965;
+    color: #00AF33;
+    padding: 1rem;
+}
+
+.create a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+section p {
+    text-align: center;
+}
+
+section .choose {
+    font-size: 2rem;
+}
+
+section .choose-quiz {
+    background-color: #434965;
+    color: #00AF33;
+    padding: 1rem;
+    margin: 1rem 35%;
+}
+
+section .choose-quiz:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#select {
+    margin-bottom: 2rem;
+}
+
+.launch {
+    color: #434965;
+    background-color: #00AF33;
+    padding: 1rem;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1rem;
+}
+
+.launch:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.down-head {
+    background-color: #00AF33;
+    padding: 0 5%;
+    height: 5.5rem;
+}
+
+.down-head p {
+    margin-top: 2.5rem;
+    color: #434965;
+    display: inline-block;
+}
+
+.down-head button {
+    margin-top: 1rem;
+    float: right;
+}
+
+#launch-game {
+    margin: 1rem;
+    padding: 1rem 2.5rem;
+    color: #434965;
+    background-color: #00AF33;
+    border: #434965 solid;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#launch-game:hover {
+    color: #00AF33;
+    background-color: #434965;
+}
+
+/* Mise en forme du quiz */
+#game {
+    margin: 0 10%;
+}
+
+#game #title {
+    color: #434965;
+    font-size: 2rem;
+}
+
+#game p{
+    text-align: center;
+}
+
+#game #slider {
+    background-color: #434965;
+    color: #00AF33;
+    padding: 2%;
+    border-radius: 1rem;
+}
+
+#game #slider #question {
+    font-size: 2rem;
+}
+
+#game #slider .answer {
+    background: #00AF33;
+    color: #434965;
+    margin: 1rem 30%;
+    padding: 1%;
+    cursor: pointer;
+}
+
+#game #slider .selectedAnswer {
+    background: #00AF33;
+    color: #e4faed;
+    margin: 1rem 30%;
+    padding: 1%;
+    cursor: pointer;
+}
+
+#game .btnSlider {
+    border: none;
+    background-color: #00AF33;
+    color: #434965;
+    padding: 1%;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border-radius: .5rem;
+}
+
+#game .btnSlider:hover {
+    background-color: #434965;
+    color: #00AF33;
+    transition: .2s;
+}
+
+/* Progress bar */
+#game #progress {
+    margin-top: 1rem;
+    height: 2rem;
+    border-radius: 1.3rem;
+    border: .3rem solid #434965;
+    background-color: black;
+}
+
+#game #progress-bar {
+    height: 2rem;
+    background-color: #00AF33;
+    border-radius: 1rem;
+}
+
+#game #progress-bar p {
+    margin: 0;
+}

@@ -1,0 +1,28 @@
+header nav a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form-group {
+    margin: 2rem 25%;
+}
+
+.btn-register {
+    border: none;
+    background-color: #00AF33;
+    padding: 1rem;
+    margin-left: 25%;
+}
+
+.btn-register:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.account a {
+    color: #00AF33;
+}
+
+.account {
+    text-align: center;
+}

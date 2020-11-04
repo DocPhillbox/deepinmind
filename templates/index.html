@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Deep-in-mind</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS sheets -->
+        <link rel="stylesheet" href="{% static 'css/theme_default.css' %}?{% now "U" %}">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img src="{% static 'image/logo.png' %}">
+                <a class="name">deep-in-mind</a>
+                <ul>
+                    {% block content %}
+                        {% if user.is_authenticated %}
+                            <li><p>Bienvenue {{user.username}} !<a href="{% url 'login' %}">Déconnexion</a></p></li>
+                        {% else %}
+                            <li><p><a href="{% url 'login' %}">Connexion</a></p></li>
+                        {% endif %}
+                    {% endblock %}
+                </ul>
+            </nav>
+        </header>
+        <div class="party">
+            <p>Rejoignez une partie et jouez avec vos amis sur un quiz</p>
+            <a href="{% url 'gamemenu' %}">Rejoindre une partie</a>
+        </div>
+        <div class="quiz">
+            <p>Créer un quiz pour pouvoir tester les connaissances de vos amis</p>
+            <a href="{% url 'quizmenu' %}">Créer un quiz</a>
+        </div>
+        <footer>
+            <p>Autheur : Andrey Bastien</p>
+            <p>Contact : bastienndrey@gmail.com</p>
+        </footer>
+    </body>
+</html>

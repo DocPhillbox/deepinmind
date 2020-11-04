@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Deep-in-mind</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS sheets -->
+        <link rel="stylesheet" href="{% static 'css/theme_default.css' %}?{% now "U" %}">
+        <link rel="stylesheet" href="{% static 'css/game.css' %}?{% now "U" %}">
+        <script src="{% static 'js/game.js' %}?{% now "U" %}"></script>
+        <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="name">deep-in-mind</a>
+                <ul>
+                    {% block content %}
+                        <li><p>{{user.username}}</p></li>
+                    {% endblock %}
+                </ul>
+            </nav>
+        </header>
+        <section class="down-head">
+            <p id="quiz_name"></p>
+            <p> / </p>
+            <p>Nombre de joueurs : 1</p>
+            <!--<p> / </p>
+            <p>Code : {{code}}</p>-->
+            <button id="launch-game" onclick="testAsync()" value='{{data}}'>Lancer la partie</button>
+        </section>
+        <div id="game">
+            <p id="title"></p>
+        </div>
+        {{ game_name|json_script:"game-name" }}
+        <script>
+            // Récupère le nom du quiz
+            var quiz_name = localStorage.getItem("QUIZ_NAME");
+            var lblQuizName = document.getElementById("quiz_name");
+            lblQuizName.innerText = quiz_name;
+
+            const gameName = JSON.parse(document.getElementById('game-name').textContent);
+
+            const gameSocket = new WebSocket(
+                'ws://' + window.location.host + '/ws/' + gameName + '/'
+            );
+            
+        </script>
+    </body>
+</html>

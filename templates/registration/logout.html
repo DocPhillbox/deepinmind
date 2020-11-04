@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Deep-in-mind</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS sheets -->
+        <link rel="stylesheet" href="{% static 'css/theme_default.css' %}?{% now "U" %}">
+        <link rel="stylesheet" href="{% static 'css/form.css' %}?{% now "U" %}">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="name">deep-in-mind</a>
+            </nav>
+        </header>
+        <div class="main">
+            <p>Vous avez été déconnecté avec succès</p>
+            <a>Connexion</a>
+            <a>Créer un compte</a>
+        </div>
+    </body>
+</html>
